@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h1>Account Reset/Delete</h1>
+        <br>
+        <form action="/account" method="post">
+            <div class="form-group">
+                <label for="account">Please Select: </label>
+                <select class="form-control" name="account">
+                    <option value="reset">Reset</option>
+                    <option value="delete">Delete</option>
+                </select>
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit">Enter</button>
+        </form>
+    </div>
+
+{% endblock %}

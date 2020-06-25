@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ book.title }}
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h1>{{ book.title }} by {{ book.author }} ({{ book.year }})</h1>
+        <h4>ISBN #{{ book.isbn }}</h4>
+            <br>
+            <h2>Reviews</h2>
+            {% if reviews %}
+                {% for review in reviews %}
+                <div class="container">
+                    <p>"{{ review.review }}"</p>
+                    <p>{{ review.rating }} out of 5</p>
+                    <p>- {{ review.user }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+            <p>No reviews yet</p>
+            {% endif %}
+            <br>
+            <h2>Add a review</h2>
+                <form action="/book/{{ book.isbn }}", method="post">
+                    <div class="form-group">
+                        <label for="rating">Rating:</label>
+                        <select class="form-control" name="rating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option default value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="review" rows="3"></textarea>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+            <br>
+            {% if goodreads %}
+            <h2>From Goodreads</h2>
+            <p>{{ book.title}} has an average rating of {{ goodreads["average_rating"] }} out of 5 from {{ goodreads["work_ratings_count"] }} total ratings</p>
+            {% endif %}
+    </div>
+
+{% endblock %}

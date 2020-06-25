@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results for "{{ search }}" in  {{ term }}
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h1>Search results for "{{ search }}" in {{ term }} </h1>
+        <br>
+        <table class="table">
+            <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+            </tr>
+            {% for book in results %}
+            
+                <tr>
+                    <td><a href="book/{{ book.isbn }}">{{ book.isbn }}</a></td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.year }}</td>
+                </tr>
+            
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

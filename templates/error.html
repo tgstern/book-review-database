@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h1>Error: {{ error }}</h1>
+        <br>
+        <form action="{{ back }}" method="get">
+            <button class="btn btn-primary" type="submit">Return</button>
+        </form>
+    </div>
+
+{% endblock %}
