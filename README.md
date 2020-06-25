@@ -35,4 +35,4 @@ By changing the route to `API/<ISBN>` the user can pull JSON data from the site 
 
 A custom error route with a programmable message a return button.
 
-Project 1 for HarvardX CS50: Web Programming with Python and JavaScript
+> Designed for HarvardX CS50: Web Programming with Python and JavaScript
