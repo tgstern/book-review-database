@@ -1,6 +1,4 @@
-# Project 1
-
-Web Programming with Python and JavaScript
+# Book Review Database
 
 Book review application built with Flask
 
@@ -36,3 +34,5 @@ By changing the route to `API/<ISBN>` the user can pull JSON data from the site 
 ## Error
 
 A custom error route with a programmable message a return button.
+
+Project 1 for HarvardX CS50: Web Programming with Python and JavaScript
